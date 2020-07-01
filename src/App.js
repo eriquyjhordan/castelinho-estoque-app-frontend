@@ -1,9 +1,11 @@
 import React from 'react';
-
+import Routes from './routes';
+import './normalize.css'
+import './global.css'
 function App() {
   return (
-    <h1 className="bg-primary">Teste</h1>
+    <Routes />
   );
-}
+};
 
 export default App;
