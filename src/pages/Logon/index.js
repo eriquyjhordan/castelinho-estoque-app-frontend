@@ -66,7 +66,7 @@ export default function Logon(){
                             <div className="input-group mb-3">
                                 <div className="input-group-prepend">
                                     <span  className="input-group-text" id="basic-addon1">
-                                        <FiMail size={18} color="primary"/>
+                                        <FiLock size={18} color="primary"/>
                                     </span>
                                 </div>
                                 <input 
