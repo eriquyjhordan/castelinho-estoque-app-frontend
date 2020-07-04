@@ -53,7 +53,8 @@ export default function Insumos(){
     let categoryId;
     datacategory.map(category => {
         if (category.name === categoria){
-            return categoryId = category.id;
+            categoryId = category.id;
+            return 0;
         }
     })
     await api.get(`subcategories/${categoryId}`).then(response => 
@@ -63,12 +64,13 @@ export default function Insumos(){
   async function cadastrarSubCategoria(e){
       e.preventDefault();
       if (selectedCategory === ''){
-          return alert('Por favor selecione uma categoria');
+          alert('Por favor selecione uma categoria');
       }
       let categoryId;
       datacategory.map(category => {
           if (category.name === selectedCategory){
-            return categoryId = category.id;
+            categoryId = category.id;
+            return 0;
           }
         })
     try{
@@ -92,12 +94,14 @@ export default function Insumos(){
     let categoryId;
     datacategory.map(category => {
         if (category.name === selectedCategory){
-            return categoryId = category.id;
+            categoryId = category.id;
+            return 0;
         }
     });
     dataSubCategory.map(subCategory => {
         if (subCategory.name === selectSubCategory){
-            return subCategoryId = subCategory.id;
+            subCategoryId = subCategory.id;
+            return 0;
         }
     });
   try{
@@ -111,16 +115,17 @@ export default function Insumos(){
       });
       alert(`O insumo ${response.data.name} foi cadastrado com sucesso`);
       setInsumo(insumos => [...insumos, response.data]);
-  }catch(error){
-      alert(JSON.stringify(error));
-  }
+    }catch(error){
+        alert(JSON.stringify(error));
+    }
   }
   async function saida(e){
       e.preventDefault();
       let insumoId;
       insumos.map(insumo => {
           if (insumo.name === selectedInsumo){
-              return insumoId = insumo.id;
+              insumoId = insumo.id;
+              return 0;
           }
       });
       try{
@@ -141,7 +146,8 @@ export default function Insumos(){
       let insumoId;
       insumos.map(insumo => {
           if (insumo.name === selectedInsumo){
-              return insumoId = insumo.id;
+            insumoId = insumo.id;
+            return 0;
           }
       });
       try{
