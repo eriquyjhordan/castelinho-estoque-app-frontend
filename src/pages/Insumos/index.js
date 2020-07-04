@@ -44,7 +44,7 @@ export default function Insumos(){
         alert(`A Categoria ${response.data.name} foi cadastrada com sucesso`);
         setDataCategory(datacategory => [...datacategory, response.data]);
     }catch(error){
-        alert(error)
+        return alert(error)
     }
       
   }
@@ -56,6 +56,7 @@ export default function Insumos(){
             categoryId = category.id;
             return 0;
         }
+        return 0;
     })
     await api.get(`subcategories/${categoryId}`).then(response => 
         setDataSubCategory(response.data)
@@ -72,6 +73,7 @@ export default function Insumos(){
             categoryId = category.id;
             return 0;
           }
+          return 0;
         })
     try{
         const response = await api.post('subcategories', {
@@ -97,12 +99,14 @@ export default function Insumos(){
             categoryId = category.id;
             return 0;
         }
+        return 0;
     });
     dataSubCategory.map(subCategory => {
         if (subCategory.name === selectSubCategory){
             subCategoryId = subCategory.id;
             return 0;
         }
+        return 0;
     });
   try{
       const response = await api.post('insumos', {
@@ -127,6 +131,7 @@ export default function Insumos(){
               insumoId = insumo.id;
               return 0;
           }
+          return '';
       });
       try{
           await api.post('saidas', {
@@ -149,6 +154,7 @@ export default function Insumos(){
             insumoId = insumo.id;
             return 0;
           }
+          return '';
       });
       try{
           await api.post('compras', {
