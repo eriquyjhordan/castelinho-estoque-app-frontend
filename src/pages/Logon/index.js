@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { FiMail, FiLock } from 'react-icons/fi';
 import api from '../../services/api';
 import './style.css';
-import { FiMail, FiLock } from 'react-icons/fi';
 
 export default function Logon(){
     const [useracess, setUseracess] = useState("");

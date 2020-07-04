@@ -1,0 +1,21 @@
+main{
+    max-width: 960px;
+    margin: 5rem auto;
+}
+
+.add{
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    background: red;
+    border-radius: 50%;
+    padding: 0.3rem;
+}
+
+.menu-add{
+    position: absolute;
+    will-change: transform;
+    top: 0px;
+    left: 0px; 
+    transform: translate3d("0px", "38px", "0px");
+}
