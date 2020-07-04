@@ -53,7 +53,7 @@ export default function Insumos(){
     let categoryId;
     datacategory.map(category => {
         if (category.name === categoria){
-            categoryId = category.id;
+            return categoryId = category.id;
         }
     })
     await api.get(`subcategories/${categoryId}`).then(response => 
@@ -62,13 +62,13 @@ export default function Insumos(){
   }
   async function cadastrarSubCategoria(e){
       e.preventDefault();
-      if (selectedCategory == ''){
+      if (selectedCategory === ''){
           return alert('Por favor selecione uma categoria');
       }
       let categoryId;
       datacategory.map(category => {
           if (category.name === selectedCategory){
-              categoryId = category.id;
+            return categoryId = category.id;
           }
         })
     try{
@@ -85,19 +85,19 @@ export default function Insumos(){
   async function cadastrarInsumo(e){    
     e.preventDefault();
 
-    if (selectedCategory == ''){
+    if (selectedCategory === ''){
         return alert('Por favor selecione uma categoria');
     }
     let subCategoryId;
     let categoryId;
     datacategory.map(category => {
         if (category.name === selectedCategory){
-            categoryId = category.id;
+            return categoryId = category.id;
         }
     });
     dataSubCategory.map(subCategory => {
         if (subCategory.name === selectSubCategory){
-            subCategoryId = subCategory.id;
+            return subCategoryId = subCategory.id;
         }
     });
   try{
@@ -120,11 +120,11 @@ export default function Insumos(){
       let insumoId;
       insumos.map(insumo => {
           if (insumo.name === selectedInsumo){
-              insumoId = insumo.id;
+              return insumoId = insumo.id;
           }
       });
       try{
-          const response = await api.post('saidas', {
+          await api.post('saidas', {
             insumo: insumoId,
             quantidade: quantidade,
             by_user: userId
@@ -141,7 +141,7 @@ export default function Insumos(){
       let insumoId;
       insumos.map(insumo => {
           if (insumo.name === selectedInsumo){
-              insumoId = insumo.id;
+              return insumoId = insumo.id;
           }
       });
       try{
@@ -317,7 +317,7 @@ export default function Insumos(){
                             }} 
                             className="form-control" id="exampleFormControlSelect1"
                           >
-                              <option>/** Categoria **\</option>
+                              <option> Selecione a Categoria </option>
                               {datacategory.map(categoria => {
                                   return (
                                       <option key={categoria.id}>{categoria.name}</option>
@@ -377,7 +377,7 @@ export default function Insumos(){
                     }} 
                     className="form-control" id="exampleFormControlSelect1"
                     >
-                        <option>/** Categoria **\</option>
+                        <option>/Selecione a Categoria</option>
                         {datacategory.map(categoria => {
                             return (
                                 <option key={categoria.id}>{categoria.name}</option>
@@ -390,7 +390,7 @@ export default function Insumos(){
                 <select value={selectSubCategory} onChange={e => setSelectSubCategory(e.target.value)} 
                 className="form-control" id="exampleFormControlSelect1"
                 >
-                    <option>/** Sub Categoria **\</option>
+                    <option>Sub Categoria</option>
                     {dataSubCategory.map(subCategoria => {
                         return (
                             <option key={subCategoria.id}>{subCategoria.name}</option>
@@ -474,7 +474,7 @@ export default function Insumos(){
                             }} 
                             className="form-control" id="exampleFormControlSelect1"
                             >
-                                <option>/** Insumo **\</option>
+                                <option>Selecione o Insumo</option>
                                 {insumos.map(insumo => {
                                     return (
                                         <option key={insumo.id}>{insumo.name}</option>
@@ -532,7 +532,7 @@ export default function Insumos(){
                             }} 
                             className="form-control" id="exampleFormControlSelect1"
                             >
-                                <option>/** Insumo **\</option>
+                                <option>Selecione o Insumo</option>
                                 {insumos.map(insumo => {
                                     return (
                                         <option key={insumo.id}>{insumo.name}</option>
