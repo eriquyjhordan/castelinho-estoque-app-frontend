@@ -192,7 +192,7 @@ export default function Insumos(){
           <div className="row">
               {insumos.map(isumo => {
                   return (
-                      <div key={isumo.id} className="card col-12 col-sm-6 col-md-4 mt-1 ml-1" style={{height: "60px", lineHeight: "6.25px", maxWidth: "320px"}}>
+                      <div key={isumo.id} className="card col-12 col-sm-6 col-md-4 mt-1" style={{height: "60px", lineHeight: "6.25px"}}>
                           <div className="card-body d-inline-flex justify-content-between">
                               <h5 className="card-title">{isumo.name}</h5>
                               <h5>{isumo.quantidade}</h5>
