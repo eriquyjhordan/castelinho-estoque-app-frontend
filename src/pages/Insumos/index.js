@@ -417,6 +417,7 @@ export default function Insumos(){
                     className="form-control" 
                     id="nameOfCategory" 
                     value={nameInsumo}
+                    maxlength="15"
                     onChange={e => setNameInsumo(e.target.value)} 
                     aria-describedby="categoryHelp" 
                     placeholder="Digite o nome do insumo"
